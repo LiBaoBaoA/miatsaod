@@ -13,7 +13,7 @@
 <body>
     <div class="wrap">
         <div class="nav">
-            <ul>
+            <ul class="list">
                 <li class="active">未使用</li>
                 <li>已使用</li>
                 <li>已过期</li>
@@ -26,5 +26,16 @@
         </div>
     </div>
 </body>
+<script>
+    let list = [...document.querySelectorAll('.list li')];
+    list.map((item) => {
+        item.onclick = () => {
+            list.map(function(v) {
+                v.classList.remove('active')
+            })
+            item.classList.add('active')
+        }
+    })
+</script>
 
 </html>
